@@ -8,7 +8,7 @@ import PostIcon from '@mui/icons-material/Book';
 import UserIcon from '@mui/icons-material/Group';
 
 // const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
-const dataProvider = simpleRestProvider('http://175.195.139.88:8000')
+const dataProvider = simpleRestProvider('http://localhost:8000')
 
 const App = () => (
     <Admin dashboard={Dashboard} dataProvider={dataProvider}>

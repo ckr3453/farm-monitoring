@@ -1,1 +1,1 @@
-# farm-monitoring
+# farm-monitoring-client

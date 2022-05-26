@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useMediaQuery } from '@mui/material';
-import { List, Create, Edit, DateInput, NumberInput, SimpleForm, ReferenceInput, SelectInput, Datagrid, TextField, DateField, SimpleList, EditButton, DeleteButton } from 'react-admin';
+import { List, Create, Edit, DateInput, NumberInput, SimpleForm, Datagrid, TextField, DateField, SimpleList, DeleteButton } from 'react-admin';
 
 export const FarmDataList = () => {
     const isSmall = useMediaQuery(theme => theme.breakpoints.down('sm'));
@@ -32,8 +32,8 @@ export const FarmDataCreate = props => (
             <NumberInput source="no" />
             <NumberInput source="value1" />
             <NumberInput source="value2" />
-            <DateInput source="start_time" />
-            <DateInput source="in_time" />
+            <DateInput defaultValue={new Date().toLocaleDateString()} source="start_time" />
+            <DateInput defaultValue={new Date().toLocaleDateString()} source="in_time" />
         </SimpleForm>
     </Create>
 );
@@ -43,8 +43,8 @@ export const FarmDataEdit = props => (
         <SimpleForm>
             <NumberInput source="value1" />
             <NumberInput source="value2" />
-            <DateInput source="start_time" />
-            <DateInput source="in_time" />
+            <DateInput defaultValue={new Date().toLocaleDateString()} source="start_time" />
+            <DateInput defaultValue={new Date().toLocaleDateString()} source="in_time" />
         </SimpleForm>
     </Edit>
 );

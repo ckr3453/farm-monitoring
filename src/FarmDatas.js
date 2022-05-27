@@ -3,10 +3,14 @@ import { useMediaQuery } from '@mui/material';
 import { List, Create, Edit, DateInput, NumberInput, SimpleForm, Datagrid, TextField, SelectInput, DateField, SimpleList, EditButton, TextInput, Toolbar, SaveButton, ReferenceInput, SimpleShowLayout, Show } from 'react-admin';
 
 const listFilters = [
-    <ReferenceInput source="building_no" reference="listFilterResource">
+    <ReferenceInput source="building_no" reference="listFilterResource" alwaysOn>
         <SelectInput label="건물 번호" optionText="building_no" alwaysOn/>
     </ReferenceInput>
 ];
+
+// const rowStyle = (record, index) => ({
+//     backgroundColor: '#efe'
+// });
 
 // const listPagination = () => <Pagination rowsPerPageOptions={[]} />;
 
@@ -18,8 +22,8 @@ export const FarmDataList = () => {
                 <SimpleList
                     primaryText={record => record.room_no}
                     secondaryText={record => record.room_temp ? `${record.room_temp} °C` : ``}
-                    tertiaryText={record => `${record.baby_food_date ? record.baby_food_date+`,` : ``} ${record.room_date ? record.room_date : ``}`}  
-                    linkType="show"                  
+                    tertiaryText={record => `${record.baby_food_date ? `이유일: `+record.baby_food_date.substr(5)+`,` : ``} ${record.room_date ? `입식일: `+record.room_date.substr(5) : ``}`}  
+                    linkType="show"                
                 />
             ) : (
                 <Datagrid>

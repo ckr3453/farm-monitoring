@@ -1,10 +1,10 @@
 import * as React from "react";
 import { useMediaQuery } from '@mui/material';
-import { Pagination, List, Create, Edit, DateInput, NumberInput, SimpleForm, Datagrid, TextField, SelectInput, DateField, SimpleList, EditButton, TextInput, Toolbar, SaveButton, ReferenceInput, SimpleShowLayout, Show } from 'react-admin';
+import { List, Create, Edit, DateInput, NumberInput, SimpleForm, Datagrid, TextField, SelectInput, DateField, SimpleList, EditButton, TextInput, Toolbar, SaveButton, ReferenceInput, SimpleShowLayout, Show } from 'react-admin';
 
 const listFilters = [
     <ReferenceInput source="building_no" reference="listFilterResource">
-        <SelectInput label="건물 번호" optionText="building_no" />
+        <SelectInput label="건물 번호" optionText="building_no" alwaysOn/>
     </ReferenceInput>
 ];
 
@@ -26,7 +26,7 @@ export const FarmDataList = () => {
                     <TextField label="건물 번호" source="building_no" />
                     <TextField label="방 번호" source="room_no" />
                     <TextField label="돼지 개체 수" source="pig_count" />
-                    <TextField label="방 온도" source={record => record.room_temp ? `${record.room_temp} °C` : ``} />
+                    <TextField label="방 온도" source="room_temp" />
                     <DateField label="이유일"source="baby_food_date" />
                     <DateField label="입식일"source="room_date" />
                     <DateField label="출하 예정일" source="shipment_date" />
